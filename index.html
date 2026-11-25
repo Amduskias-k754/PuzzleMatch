@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PuzzleMatch for Viking Rise</title>
+    <link rel="stylesheet" href="style.css">
+    <button id="share-btn" class="btn-secondary" title="Share this tool with your tribe">
+    🔗 Share
+</button>
+</head>
+<body class="login-page">
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <header class="auth-header">
+                <div class="logo-badge">🧩</div>
+                <h1>PuzzleMatch</h1>
+                <p class="subtitle">for Viking Rise</p>
+                <p class="tagline" id="auth-tagline">Manage your collection and find tribe trades.</p>
+            </header>
+
+            <!-- 1. SIGN-IN FORM (Visible par défaut) -->
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" placeholder="viking@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember"> Remember me
+                    </label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn-primary">Sign In</button>
+            </form>
+
+            <!-- 2. SIGN-UP FORM (Masqué par défaut) -->
+            <form id="signup-form" class="auth-form hidden">
+                <div class="form-group">
+                    <label for="signup-chief">In-Game Chief Name</label>
+                    <input type="text" id="signup-chief" placeholder="e.g. RagnarLothbrok" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="signup-kingdom">Kingdom #</label>
+                        <input type="number" id="signup-kingdom" placeholder="e.g. 754" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-tribe">Tribe Tag</label>
+                        <input type="text" id="signup-tribe" placeholder="e.g. k754" maxlength="6" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" placeholder="viking@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Create a password" required>
+                </div>
+
+                <button type="submit" class="btn-primary">Create Profile</button>
+            </form>
+
+            <!-- Bascule entre connexion et inscription -->
+            <div class="auth-footer-toggle">
+                <p id="footer-to-signup">Don't have an account? <a href="#" id="btn-show-signup">Create a profile</a></p>
+                <p id="footer-to-login" class="hidden">Already have an account? <a href="#" id="btn-show-login">Sign In</a></p>
+            </div>
+
+            <!-- LE PIED DE PAGE GLOBAL (Version, signature, don) -->
+            <footer class="app-footer">
+                <div class="footer-left">
+                    <span id="app-version">v1.0.0</span> &bull; <span id="last-update-year">2026</span>
+                </div>
+                <div class="footer-right">
+                    <span class="signature">Created by [k754]Amduskias</span>
+                    <a href="https://buymeacoffee.com/amduskias.k754" target="_blank" class="btn-donate" title="Support the developer">☕ Donate</a>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

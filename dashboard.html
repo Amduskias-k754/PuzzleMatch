@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PuzzleMatch - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+
+    <!-- BARRE SUPÉRIEURE -->
+    <header class="dash-topbar">
+        <div class="progress-stats">
+            <span class="stat-badge" id="category-stats">Loading category...</span>
+            <span class="stat-badge total" id="total-stats">Loading total...</span>
+        </div>
+        <div class="top-actions">
+            <button id="share-btn" class="btn-secondary">🔗 Share link</button>
+            <a href="#" class="help-link">help?</a>
+        </div>
+    </header>
+
+    <!-- CORPS PRINCIPAL EN 3 COLONNES -->
+    <div class="dash-layout">
+        
+        <!-- COLONNE GAUCHE : Profil & Navigation -->
+        <aside class="sidebar-left">
+            <div class="player-info">
+                <h2 id="display-name">PLAYER NAME</h2>
+                <p id="display-id">VikingRiseID</p>
+                <p id="display-tribe" class="tribe-badge">[Tribe Name]</p>
+            </div>
+            <nav class="side-nav">
+                <a href="#" class="nav-item active">📖 Collection</a>
+                <a href="#" class="nav-item">📜 History</a>
+                <a href="#" class="nav-item">👤 My Profile</a>
+            </nav>
+        </aside>
+
+        <!-- CENTRE : Le Grimoire (6 puzzles par double page) -->
+        <main class="grimoire-container">
+            <button id="btn-prev-page" class="page-arrow prev" title="Previous page">&#9664;</button>
+            
+            <div class="book-spread">
+                <!-- Rempli dynamiquement par script.js -->
+                <div class="book-page left-page" id="left-page-grid"></div>
+                <div class="book-page right-page" id="right-page-grid"></div>
+            </div>
+
+            <button id="btn-next-page" class="page-arrow next" title="Next page">&#9654;</button>
+        </main>
+
+        <!-- COLONNE DROITE : Action principale -->
+        <aside class="sidebar-right">
+            <button id="btn-find-match" class="btn-match">FIND MATCH</button>
+        </aside>
+
+    </div>
+
+    <!-- PIED DE PAGE GLOBAL -->
+    <footer class="app-footer dash-footer">
+        <div class="footer-left">
+            <span id="app-version">v1.0.0</span> &bull; <span id="last-update-year">2026</span>
+        </div>
+        <div class="footer-right">
+            <span class="signature">Created by [k754]Amduskias</span>
+            <a href="https://buymeacoffee.com/amduskias.k754" target="_blank" class="btn-donate" title="Support the developer">☕ Donate</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- FENÊTRE MODALE DE GESTION DES PIÈCES -->
+    <div id="puzzle-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <header class="modal-header">
+                <h2 id="modal-puzzle-title">Puzzle Name</h2>
+                <button id="close-modal" class="btn-close">&times;</button>
+            </header>
+            
+            <div class="modal-body">
+                <p class="modal-instructions">Click on a piece to increment its quantity (Left-click: +1, Right-click: -1).</p>
+                <!-- La grille de pièces sera injectée ici dynamiquement par JavaScript -->
+                <div id="pieces-grid" class="pieces-grid"></div>
+            </div>
+
+            <footer class="modal-footer">
+                <button id="btn-save-puzzle" class="btn-primary">Save & Close</button>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
